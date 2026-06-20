@@ -1,0 +1,67 @@
+/* style.css */
+
+/* 1. Page Setup & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fcfbf9; /* Soft, elegant off-white background */
+    font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif; /* Clean, minimalist typography */
+    color: #0a0a0a; /* Premium deep black for text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 2. Heading Style */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em; /* Tight tracking for a high-end look */
+    text-transform: uppercase; /* Looks sharp for portfolio headers */
+}
+
+/* 3. Paragraph Style */
+p {
+    font-size: 1rem;
+    color: #666666; /* Muted slate grey for secondary text */
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+}
+
+/* 4. Navigation Links (Styled as minimalist buttons) */
+a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #0a0a0a; /* Pure black button background */
+    color: #fcfbf9; /* Off-white text inside button */
+    padding: 10px 24px;
+    margin: 5px; /* Adds space between your navigation links */
+    border: 1px solid #0a0a0a;
+    border-radius: 4px; /* Subtle, sharp rounding instead of bubbly bubbles */
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.25s ease;
+}
+
+/* 5. Interactive Hover Effects */
+a:hover {
+    background-color: transparent; /* Inverts the colors on hover */
+    color: #0a0a0a; /* Text flips to black */
+    transform: translateY(-1px);
+}
+
+a:active {
+    transform: translateY(0);
+}

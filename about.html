@@ -1,8 +1,71 @@
 <!DOCTYPE html>
-<body>
-<h2>about me </h2>
-<p>hey my name is nidhin xavier </p>
-<p1>im a computer science engineering(Cybersecurity) student in 4th year</p1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Nidhin Xavier</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="profilepic.jpeg">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="subpage-body">
 
+    <!-- Sticky Navigation Header -->
+    <header class="header-nav">
+        <div class="logo">
+            <a href="index.html">nidhin</a>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="404.html">Certificates</a>
+            <a href="Nidhin_Xavier_Resume.pdf" target="_blank">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main About Content Section -->
+    <section class="subpage-section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-card">
+            <p>Hey, my name is Nidhin Xavier.</p>
+            <p1>I'm a Computer Science Engineering (Cybersecurity) student in my 4th year.</p1>
+            
+            <div class="skills-highlight">
+                <h3 class="highlight-title">Focus Areas</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">Digital Forensics</span>
+                    <span class="skill-tag">Full-Stack Development</span>
+                    <span class="skill-tag">Scripting & Automation</span>
+                    <span class="skill-tag">Linux Systems</span>
+                    <span class="skill-tag">Zero-Knowledge Protocols</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <span>Made with ❤️ by <a href="https://github.com/kali777" target="_blank">nidhin</a></span>
+        </div>
+        <div class="footer-middle">
+            <div class="time-widget">
+                <span class="time-dot"></span>
+                <span>Local Time: <span id="local-time">--:--:-- (GMT+5:30)</span></span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="mailto:nidhinxavier777@gmail.com">Email</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <!-- Timer widget controller script -->
+    <script src="script.js"></script>
 
 </body>
+</html>

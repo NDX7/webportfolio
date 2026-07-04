@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates | Nidhin Xavier</title>
+    <meta name="description" content="View Nidhin Xavier's certifications in cybersecurity, blockchain, CTF competitions, and more.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="profilepic.jpeg">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Certificate-specific card styles */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.03), rgba(16,185,129,0.03));
+            opacity: 0;
+            transition: var(--transition-smooth);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(59, 130, 246, 0.25);
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.08);
+        }
+
+        .cert-card:hover::before {
+            opacity: 1;
+        }
+
+        .cert-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .cert-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .cert-card-meta {
+            flex: 1;
+        }
+
+        .cert-type-badge {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.07);
+            border: 1px solid rgba(16, 185, 129, 0.18);
+            padding: 3px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .cert-type-badge.badge-ctf {
+            color: #f59e0b;
+            background: rgba(245, 158, 11, 0.07);
+            border-color: rgba(245, 158, 11, 0.18);
+        }
+
+        .cert-type-badge.badge-course {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.07);
+            border-color: rgba(59, 130, 246, 0.18);
+        }
+
+        .cert-type-badge.badge-program {
+            color: #a78bfa;
+            background: rgba(167, 139, 250, 0.07);
+            border-color: rgba(167, 139, 250, 0.18);
+        }
+
+        .cert-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .cert-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .cert-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .cert-issuer {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .cert-view-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            transition: var(--transition-fast);
+        }
+
+        .cert-card:hover .cert-view-btn {
+            color: var(--text-primary);
+            gap: 10px;
+        }
+
+        .cert-view-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: var(--transition-fast);
+        }
+
+        @media (max-width: 768px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="subpage-body">
+
+    <!-- Sticky Navigation Header -->
+    <header class="header-nav">
+        <div class="logo">
+            <a href="index.html">nidhin</a>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="certificates.html" class="active">Certificates</a>
+            <a href="Nidhin_Xavier_Resume.pdf" target="_blank">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Certificates Section -->
+    <section class="subpage-section" style="max-width: 1100px;">
+        <h2 class="section-title">Certifications &amp; Achivements</h2>
+        <p class="section-description">A collection of certifications from courses, programs, and CTF competitions I've participated in and Achivements i have made.</p>
+
+        <div class="cert-grid">
+
+            <!-- CyberQuest CTF - Participation -->
+            <a class="cert-card" href="certificates/Certificate of Participation - CyberQuest CTF.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🏴</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-ctf">CTF</span>
+                        <h3>CyberQuest CTF — Certificate of Participation</h3>
+                    </div>
+                </div>
+                <p>Participated in CyberQuest Capture The Flag competition, demonstrating hands-on offensive security and problem-solving skills.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">CyberQuest</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Eschaton CTF -->
+            <a class="cert-card" href="certificates/Eschaton_CTF_Certificate_Nidhin_Xavier_.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">⚔️</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-ctf">CTF</span>
+                        <h3>Eschaton CTF — Certificate of Participation</h3>
+                    </div>
+                </div>
+                <p>Competed in the Eschaton Capture The Flag event, applying cybersecurity techniques in a real-time hacking challenge environment.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">Eschaton</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- NYU Intro to Cybersecurity -->
+            <a class="cert-card" href="certificates/NYU_intro_to_cybersecurity.jpeg" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🎓</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-course">Course</span>
+                        <h3>Introduction to Cybersecurity</h3>
+                    </div>
+                </div>
+                <p>Completed NYU's introductory cybersecurity course covering core concepts including threat modeling, network security, and security principles.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">NYU / Coursera</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Techmaghi Workshop -->
+            <a class="cert-card" href="certificates/Techmaghinidhinxavier.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🛠️</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-program">Workshop</span>
+                        <h3>Techmaghi Technical Workshop</h3>
+                    </div>
+                </div>
+                <p>Certificate of recognition from Techmaghi, a technical workshop and event platform for engineering students focused on practical skills.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">Techmaghi</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- NPTEL Joy of Computing -->
+            <a class="cert-card" href="certificates/The Joy of Computing using Python.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🐍</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-course">Course</span>
+                        <h3>The Joy of Computing using Python</h3>
+                    </div>
+                </div>
+                <p>Completed NPTEL's "The Joy of Computing using Python" course — an IIT-delivered program covering Python fundamentals and computational thinking.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">NPTEL / IIT</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Blockchain Foundation Program -->
+            <a class="cert-card" href="certificates/blockchain-foundation-program.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">⛓️</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-course">Course</span>
+                        <h3>Blockchain Foundation Program</h3>
+                    </div>
+                </div>
+                <p>Completed a foundational blockchain program covering distributed ledger technology, consensus mechanisms, and smart contract concepts.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">Blockchain Program</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- CyberQuest 1st Place -->
+            <a class="cert-card" href="certificates/cya_quest_firstplace_ctf.jpeg" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🥇</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-ctf">CTF · 1st Place</span>
+                        <h3>CyberQuest CTF — First Place Winner</h3>
+                    </div>
+                </div>
+                <p>Achieved <strong style="color: var(--text-primary); font-weight: 600;">1st place</strong> at the CyberQuest CTF competition, excelling across categories including web exploitation, reverse engineering, and forensics.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">CyberQuest</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Drones and Security -->
+            <a class="cert-card" href="certificates/drones_and_security_programs.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🚁</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-program">Program</span>
+                        <h3>Drones and Security Program</h3>
+                    </div>
+                </div>
+                <p>Certificate from a specialized program on drones and their intersection with cybersecurity — covering UAV security, vulnerabilities, and countermeasures.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">Security Program</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- EnigmaXplore CTF Participation -->
+            <a class="cert-card" href="certificates/enigmaxplorectf_participation.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🔍</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-ctf">CTF</span>
+                        <h3>EnigmaXplore CTF — Certificate of Participation</h3>
+                    </div>
+                </div>
+                <p>Participated in the EnigmaXplore CTF competition, tackling challenges in cryptography, OSINT, reverse engineering, and web security.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">EnigmaXplore</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- Springboard Blockchain -->
+            <a class="cert-card" href="certificates/springboard_blockchain_course.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🌐</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-course">Course</span>
+                        <h3>Blockchain Technology Course</h3>
+                    </div>
+                </div>
+                <p>Completed Springboard's blockchain technology course, gaining expertise in decentralized applications, cryptography fundamentals, and Web3 concepts.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">Springboard</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+            <!-- TinkerHub Web Design -->
+            <a class="cert-card" href="certificates/tinkerhub_webdesign_program.pdf" target="_blank" rel="noopener">
+                <div class="cert-card-header">
+                    <div class="cert-icon">🎨</div>
+                    <div class="cert-card-meta">
+                        <span class="cert-type-badge badge-program">Program</span>
+                        <h3>Web Design Program</h3>
+                    </div>
+                </div>
+                <p>Completed TinkerHub's Web Design Program, covering modern front-end development, UI/UX principles, and responsive design techniques.</p>
+                <div class="cert-footer">
+                    <span class="cert-issuer">TinkerHub</span>
+                    <span class="cert-view-btn">
+                        View Certificate
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            <span><a href="https://github.com/NDX7" target="_blank">nidhin</a></span>
+        </div>
+        <div class="footer-middle">
+            <div class="time-widget">
+                <span class="time-dot"></span>
+                <span>Local Time: <span id="local-time">--:--:-- (GMT+5:30)</span></span>
+            </div>
+        </div>
+        <div class="footer-right">
+            <a href="mailto:nidhinxavier777@gmail.com">Email</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

